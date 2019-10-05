@@ -1,0 +1,17 @@
+键位
+
+F12 Reset
+F11 Test
+F9 Quit
+F7 中文
+F8 西文
+
+
+已经实现的功能
+
+1、自检
+Ctrl Reset Test 进入自检
+
+2、汉字单色显示
+
+3、提示栏

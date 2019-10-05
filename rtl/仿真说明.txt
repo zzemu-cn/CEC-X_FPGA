@@ -1,0 +1,105 @@
+C:\CEC-X\rtl
+php C:\CEC-X\membuild\bin2tbmem.php CEC-I.rom tb\CEC-I.d 524288
+php C:\CEC-X\membuild\bin2tbmem.php CEC-I.selftest.rom tb\CEC-I.selftest.d 524288
+
+iverilog -DSIMULATE=1 -c modules.f -o applefpga.tb
+
+vvp applefpga.tb
+
+gtkwave applefpga.dump
+
+
+reg				LC_BANK1;
+reg				LC_BANK2;
+reg				LC_BANK1_W;
+reg				LC_BANK2_W;
+reg				LC_BANK;
+reg	[4:0]		BANK;
+wire	[1:0]		BANK_ADDRESS;
+reg				LC_WE;
+wire				APPLE_TXT_RAM;
+wire				APPLE_HR_RAM;
+wire				APPLE_LC_RAM;
+wire				APPLE_ZP_RAM;
+wire				APPLE_MAIN_RAM;
+
+({BANK, APPLE_LC_RAM, ALT_ZP, (LC_BANK1 | LC_BANK2), RW_N}
+
+APPLE_ZP_RAM	// 0000 - 00FF
+APPLE_LC_RAM    // D E F
+
+
+D E F 地址 12K ROM 16K RAM
+其中 D 可以映射到两个 4K RAM
+
+
+always @(negedge PH_2 or negedge RESET_N)
+begin
+	if(~RESET_N)
+	begin
+		TEXT_80 <= 1'b0;
+		ALT_CHAR <= 1'b0;
+		TEXT	<= 1'b1;
+		MIXED <= 1'b0;
+		SECONDARY <= 1'b0;
+		DHRES <= 1'b0;
+		HGR <= 1'b0;
+		SPEAKER <= 1'b0;
+		STORE_80 <= 1'b0;
+		ARAM_RD <= 1'b0;
+		ARAM_WR <= 1'b0;
+		SLOTCXROM <= 1'b0;
+		ALT_ZP <= 1'b0;
+		SLOT_C3ROM <= 1'b0;
+	end
+	else
+	begin
+			if(~RW_N)
+			begin
+				case({APPLE_C0, ADDRESS[7:0]})
+				9'h100:		STORE_80 <= 1'b0;
+				9'h101:		STORE_80 <= 1'b1;
+				9'h102:		ARAM_RD <= 1'b0;
+				9'h103:		ARAM_RD <= 1'b1;
+				9'h104:		ARAM_WR <= 1'b0;
+				9'h105:		ARAM_WR <= 1'b1;
+				9'h106:		SLOTCXROM <= 1'b0;
+				9'h107:		SLOTCXROM <= 1'b1;
+				9'h108:		ALT_ZP <= 1'b0;
+				9'h109:		ALT_ZP <= 1'b1;
+				9'h10A:		SLOT_C3ROM <= 1'b0;
+				9'h10B:		SLOT_C3ROM <= 1'b1;
+				9'h10C:		TEXT_80 <= 1'b0;			// Text 40 Mode
+				9'h10D:		TEXT_80 <= 1'b1;			// Text 80 Mode
+				9'h10E:		ALT_CHAR <= 1'b0;			// Text 40 Mode
+				9'h10F:		ALT_CHAR <= 1'b1;			// Text 80 Mode
+				9'h150:		TEXT <= 1'b0;			// Set Graphics Mode
+				9'h151:		TEXT <= 1'b1;			// Set Text Mode
+				9'h152:		MIXED <= 1'b0;			// Set Full Screen Graphics Mode
+				9'h153:		MIXED <= 1'b1;			//	Set Mixed-Screen Graphics Mode
+				9'h154:		SECONDARY <= 1'b0;	//	Set HI-RES Page 2 off
+				9'h155:		SECONDARY <= 1'b1;	//	Set HI-RES Page 2 on
+				9'h156:		HGR <= 1'b0;			//	Set HI-RES mode off
+				9'h157:		HGR <= 1'b1;			//	Set HI-RES mode on
+				9'h15E:		DHRES <= 1'b1;					// Clear Game I/O AN-3 output = 1
+				9'h15F:		DHRES <= 1'b0;					// Set Game I/O AN-3 output = 0
+				endcase
+			end
+			else
+			begin
+				case({APPLE_C0, ADDRESS[7:0]})
+				9'h130:		SPEAKER <= ~SPEAKER;
+				9'h150:		TEXT <= 1'b0;			// Set Graphics Mode
+				9'h151:		TEXT <= 1'b1;			// Set Text Mode
+				9'h152:		MIXED <= 1'b0;			// Set Full Screen Graphics Mode
+				9'h153:		MIXED <= 1'b1;			//	Set Mixed-Screen Graphics Mode
+				9'h154:		SECONDARY <= 1'b0;	//	Set HI-RES Page 2 off
+				9'h155:		SECONDARY <= 1'b1;	//	Set HI-RES Page 2 on
+				9'h156:		HGR <= 1'b0;			//	Set HI-RES mode off
+				9'h157:		HGR <= 1'b1;			//	Set HI-RES mode on
+				9'h15E:		DHRES <= 1'b1;					// Clear Game I/O AN-3 output = 1
+				9'h15F:		DHRES <= 1'b0;					// Set Game I/O AN-3 output = 0
+				endcase
+			end
+	end
+end

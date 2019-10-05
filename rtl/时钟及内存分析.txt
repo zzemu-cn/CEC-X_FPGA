@@ -1,0 +1,79 @@
+时钟频率
+
+apple_video.v模块中的 CLK_MOD
+
+VGA_CLK 经 50MHz 分频得到 25MHz
+
+计数器每14个周期 CLK_MOD = 1'b1;
+
+	4'd13:
+	begin
+		PIXEL_COUNT <= 4'd00;
+		CLK_MOD <= 1'b1;
+		ALT  <= 1'b1;
+		ROM_READ <= 1'b0;
+	end
+
+
+PH_2 的生成
+
+ON		OFF			PH_2 = 16.07 MHz
+OFF		ON			PH_2 = 2.083 MHz
+OFF		OFF			PH_2 = 1.042 MHz
+ON                           ON                                           暂停
+
+PH_2 的频率 50/3
+50/24
+50/48
+计算时，要除去 CLK_MOD 占用的时间。
+
+PH_2 不是标准的时钟方波
+
+在时钟变上沿时需要错开 CLK_MOD
+CLK_MOD 来自 apple_video.v
+相当于CLK_MOD每14*2个CLK50MHZ周期使能1个周期
+
+CLK_MOD 优先
+PH_2下沿有效，~PH_2 供给CPU时钟
+
+在 AppleFPGA.v 模块
+
+always @(posedge CLK50MHZ)
+begin
+	case (CLK[7:0])
+	8'h00:
+		if(!CLK_MOD)
+		begin
+			PH_2 <= 1'b1;
+			CLK <= 8'h01;
+		end
+	8'h01:
+		if(!CLK_MOD)
+		begin
+			PH_2 <= 1'b1;
+			CLK <= 8'h02;
+		end
+	8'h02:
+	begin
+		PH_2 <= 1'b0;
+		if(SWITCH[1:0] == 2'b10)
+			CLK <= 8'h00;
+		else
+			CLK <= 8'h03;
+	end
+
+
+访问 SRAM
+视频模块（只读），软驱模块，CPU 读写模块需要同 SRAM 交互数据
+
+//assign RAM0_CS_N = !(CLK_MOD | (RW_N & !RAM0_CS_X) | !RAM0_CS_Y);
+//assign RAM1_CS_N = !((FLOPPY_READ | FLOPPY_WRITE) & PH_2);
+
+CLK_MOD 显示电路读写内存，它由 VGA_CLK 控制，所以每次产生连续两个CLK50MHZ的信号。
+RW_N CPU输出的读写信号
+
+RAM0_CS_Y <= RW_N | RAM0_CS_X;
+
+对于异步SRAM读取，可以同一个周期建立地址并读取
+对于同步SRAM读取，需要一个周期建立地址，一个周期读取
+

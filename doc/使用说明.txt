@@ -1,0 +1,77 @@
+开发板：友晶 ALTERA DE1 和 ALTERA DE2
+使用的开发工具：Quartus II 13.0sp1
+
+需要把 flash_build 目录中的文件 flash_rom.bin 写入开发板FLASH。
+
+--------------------------
+
+键位
+
+F12 Reset
+F11 Test
+F9 Quit
+F7 中文
+F8 西文
+
+
+自检
+Ctrl Reset Test 进入自检
+
+
+开关 SWITCH
+SW0 SW1 速度选择：0 0 正常 0 1 加速
+
+SW2 SW3 软盘写保护
+SW4 从 FLASH 载入软盘镜像
+SW5 软盘镜像选择 DOS3.3 或 LodeRunner
+
+SW6 SW7 选择中华学习机系统: CEC-I 1.1、CEC-I 1.21、CEC-E、CEC-2000
+
+-----------------------------
+虚拟软驱使用
+
+通过串口命令上传下载 .NIB 软盘镜像
+速度比较慢
+
+upload_nib.exe COM5 LodeRunner.nib
+
+download_nib.exe COM5 test.nib
+
+-----------------------------
+
+
+
+//  7 System type 1	Not used
+//  6 System type 0	Not used
+//  5 Serial Port speed
+
+//  4 Swap floppy
+//  3 Write protect floppy 2
+//  2 Write protect floppy 1
+//  1 CPU_SPEED[1]
+//  0 CPU_SPEED[0]
+
+SWITCH[1:0]
+ON	ON	Stop
+ON	OFF	PH_2 = 16.07 MHz
+OFF	ON	PH_2 = 2.083 MHz
+OFF	OFF	PH_2 = 1.042 MHz
+
+
+SWITCH[9:6]
+FLASH 地址选择开关
+
+
+-----------------------------
+Test键：当同时按下Ctr1+Reset+Test这三个键时，主机进行自检测。
+Break键：从监控返回BASIC状态，它不破坏内存里原有的BASTC程序。它相当于按Ctrl+C键。
+Tab键：像是打印机上的定位键，好比说屏幕定了1，11，21，31四个位置，光标在13那儿，按Tab键就会移到下一个定位21。
+
+F1键：进入ASCII方式（中文状态的字母方式）。
+F2键：进入中文状态的拼音方式。
+F8键：进入中文状态的区位方式。
+F4编：供用户自定义使用（键码为14）。
+F5键：供用户自定义使用（键码为06）。
+F6键：冷起动键，当同时按下Ctrl+Reset+F6三键后，则系统在不关电源的情况下，重新启动。
+中文键：进入中文状态。
+西文键：进入西文状态。

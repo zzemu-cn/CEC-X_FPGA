@@ -1,0 +1,142 @@
+C:/CEC-X/rtl/apple_video.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/apple_video.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module APPLE_VIDEO
+
+Top level modules:
+	APPLE_VIDEO
+
+} {} {}} C:/CEC-X/rtl/t65/T65.vhd {2 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/T65.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Loading package t65_pack
+-- Compiling entity t65
+-- Compiling architecture rtl of t65
+** Warning: C:/CEC-X/rtl/t65/T65.vhd(163): (vcom-1083) Implicit array operator "/=" always returns TRUE (left length 2 is not equal to right length 3).
+
+} {} {}} C:/CEC-X/rtl/tb/AppleFPGA_tb.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/tb/AppleFPGA_tb.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module top_tb
+
+Top level modules:
+	top_tb
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/reg_sp.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/reg_sp.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module Reg_SP
+
+Top level modules:
+	Reg_SP
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/fsm_execution_unit.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/fsm_execution_unit.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module FSM_Execution_Unit
+
+Top level modules:
+	FSM_Execution_Unit
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/core.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/core.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module Core
+
+Top level modules:
+	Core
+
+} {} {}} C:/CEC-X/rtl/tb/mem_flash_tb.selftest.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/tb/mem_flash_tb.selftest.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module mem_flash_tb
+
+Top level modules:
+	mem_flash_tb
+
+} {} {}} C:/CEC-X/rtl/AppleFPGA.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/AppleFPGA.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module AppleFPGA
+
+Top level modules:
+	AppleFPGA
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/regbank_axy.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/regbank_axy.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module RegBank_AXY
+
+Top level modules:
+	RegBank_AXY
+
+} {} {}} C:/CEC-X/rtl/t65/SSRAM.vhd {1 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/SSRAM.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity ssram
+-- Compiling architecture behaviour of ssram
+
+} {} {}} C:/CEC-X/rtl/t65/T65_MCode.vhd {1 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/T65_MCode.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Loading package t65_pack
+-- Compiling entity t65_mcode
+-- Compiling architecture rtl of t65_mcode
+
+} {} {}} C:/CEC-X/rtl/ps2_keyboard_glb.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/ps2_keyboard_glb.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module ps2_keyboard
+
+Top level modules:
+	ps2_keyboard
+
+} {} {}} C:/CEC-X/rtl/t65/T65_ALU.vhd {1 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/T65_ALU.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Loading package t65_pack
+-- Compiling entity t65_alu
+-- Compiling architecture rtl of t65_alu
+
+} {} {}} C:/CEC-X/rtl/tb/IS61LV25616AL.v {1 {vlog -work work -novopt +define+SIMULATE=1 -nocovercells C:/CEC-X/rtl/tb/IS61LV25616AL.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module IS61LV25616
+
+Top level modules:
+	IS61LV25616
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/r65c02_tc.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/r65c02_tc.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module R65C02_TC
+
+Top level modules:
+	R65C02_TC
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/reg_pc.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/reg_pc.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module Reg_PC
+
+Top level modules:
+	Reg_PC
+
+} {} {}} C:/CEC-X/rtl/t65/T16450.vhd {1 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/T16450.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Loading package numeric_std
+-- Compiling entity t16450
+-- Compiling architecture rtl of t16450
+
+} {} {}} C:/CEC-X/rtl/cpu65c02_true_cycle/fsm_nmi.v {1 {vlog -work work -novopt -nocovercells C:/CEC-X/rtl/cpu65c02_true_cycle/fsm_nmi.v
+Model Technology ModelSim SE vlog 6.5b Compiler 2009.05 May 21 2009
+-- Compiling module FSM_NMI
+
+Top level modules:
+	FSM_NMI
+
+} {} {}} C:/CEC-X/rtl/t65/T65_Pack.vhd {1 {vcom -work work -2002 -explicit -novopt C:/CEC-X/rtl/t65/T65_Pack.vhd
+Model Technology ModelSim SE vcom 6.5b Compiler 2009.05 May 21 2009
+-- Loading package standard
+-- Loading package std_logic_1164
+-- Compiling package t65_pack
+
+} {} {}}

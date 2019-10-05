@@ -1,0 +1,266 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2013 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+# Date created = 09:54:03  October 30, 2018
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		cec-x_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C20F484C7
+set_global_assignment -name TOP_LEVEL_ENTITY AppleFPGA
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "09:54:03  OCTOBER 30, 2018"
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 1
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name USE_CONFIGURATION_DEVICE ON
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_location_assignment PIN_L22 -to SWITCH[0]
+set_location_assignment PIN_L21 -to SWITCH[1]
+set_location_assignment PIN_M22 -to SWITCH[2]
+set_location_assignment PIN_V12 -to SWITCH[3]
+set_location_assignment PIN_W12 -to SWITCH[4]
+set_location_assignment PIN_U12 -to SWITCH[5]
+set_location_assignment PIN_U11 -to SWITCH[6]
+set_location_assignment PIN_M2 -to SWITCH[7]
+set_location_assignment PIN_M1 -to SWITCH[8]
+set_location_assignment PIN_L2 -to SWITCH[9]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[4]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[5]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[6]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[7]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[8]
+set_instance_assignment -name IO_STANDARD LVTTL -to SWITCH[9]
+set_location_assignment PIN_R20 -to LED[0]
+set_location_assignment PIN_R19 -to LED[1]
+set_location_assignment PIN_U19 -to LED[2]
+set_location_assignment PIN_Y19 -to LED[3]
+set_location_assignment PIN_T18 -to LED[4]
+set_location_assignment PIN_V19 -to LED[5]
+set_location_assignment PIN_Y18 -to LED[6]
+set_location_assignment PIN_U18 -to LED[7]
+set_location_assignment PIN_R18 -to LED[8]
+set_location_assignment PIN_R17 -to LED[9]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[4]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[5]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[6]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[7]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[8]
+set_instance_assignment -name IO_STANDARD LVTTL -to LED[9]
+set_location_assignment PIN_L1 -to CLK50MHZ
+set_instance_assignment -name IO_STANDARD LVTTL -to CLK50MHZ
+set_location_assignment PIN_D9 -to VGA_RED[0]
+set_location_assignment PIN_C9 -to VGA_RED[1]
+set_location_assignment PIN_A7 -to VGA_RED[2]
+set_location_assignment PIN_B7 -to VGA_RED[3]
+set_location_assignment PIN_B8 -to VGA_GREEN[0]
+set_location_assignment PIN_C10 -to VGA_GREEN[1]
+set_location_assignment PIN_B9 -to VGA_GREEN[2]
+set_location_assignment PIN_A8 -to VGA_GREEN[3]
+set_location_assignment PIN_A9 -to VGA_BLUE[0]
+set_location_assignment PIN_D11 -to VGA_BLUE[1]
+set_location_assignment PIN_A10 -to VGA_BLUE[2]
+set_location_assignment PIN_B10 -to VGA_BLUE[3]
+set_location_assignment PIN_A11 -to VGA_HS
+set_location_assignment PIN_B11 -to VGA_VS
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_RED[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_RED[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_RED[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_RED[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_GREEN[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_GREEN[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_GREEN[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_GREEN[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_BLUE[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_BLUE[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_BLUE[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_BLUE[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_HS
+set_instance_assignment -name IO_STANDARD LVTTL -to VGA_VS
+set_location_assignment PIN_AB16 -to FLASH_DATA[0]
+set_location_assignment PIN_AA16 -to FLASH_DATA[1]
+set_location_assignment PIN_AB17 -to FLASH_DATA[2]
+set_location_assignment PIN_AA17 -to FLASH_DATA[3]
+set_location_assignment PIN_AB18 -to FLASH_DATA[4]
+set_location_assignment PIN_AA18 -to FLASH_DATA[5]
+set_location_assignment PIN_AB19 -to FLASH_DATA[6]
+set_location_assignment PIN_AA19 -to FLASH_DATA[7]
+set_location_assignment PIN_AA15 -to FLASH_OE_N
+set_location_assignment PIN_W14 -to FLASH_RESET_N
+set_location_assignment PIN_Y14 -to FLASH_WE_N
+set_location_assignment PIN_AA3 -to RAM_ADDRESS[0]
+set_location_assignment PIN_AB3 -to RAM_ADDRESS[1]
+set_location_assignment PIN_AA4 -to RAM_ADDRESS[2]
+set_location_assignment PIN_AB4 -to RAM_ADDRESS[3]
+set_location_assignment PIN_AA5 -to RAM_ADDRESS[4]
+set_location_assignment PIN_AB10 -to RAM_ADDRESS[5]
+set_location_assignment PIN_AA11 -to RAM_ADDRESS[6]
+set_location_assignment PIN_AB11 -to RAM_ADDRESS[7]
+set_location_assignment PIN_V11 -to RAM_ADDRESS[8]
+set_location_assignment PIN_W11 -to RAM_ADDRESS[9]
+set_location_assignment PIN_R11 -to RAM_ADDRESS[10]
+set_location_assignment PIN_T11 -to RAM_ADDRESS[11]
+set_location_assignment PIN_Y10 -to RAM_ADDRESS[12]
+set_location_assignment PIN_U10 -to RAM_ADDRESS[13]
+set_location_assignment PIN_R10 -to RAM_ADDRESS[14]
+set_location_assignment PIN_T7 -to RAM_ADDRESS[15]
+set_location_assignment PIN_Y6 -to RAM_ADDRESS[16]
+set_location_assignment PIN_Y5 -to RAM_ADDRESS[17]
+set_location_assignment PIN_AB5 -to RAM0_CS_N
+set_location_assignment PIN_AA6 -to RAM_DATA0[0]
+set_location_assignment PIN_AB6 -to RAM_DATA0[1]
+set_location_assignment PIN_AA7 -to RAM_DATA0[2]
+set_location_assignment PIN_AB7 -to RAM_DATA0[3]
+set_location_assignment PIN_AA8 -to RAM_DATA0[4]
+set_location_assignment PIN_AB8 -to RAM_DATA0[5]
+set_location_assignment PIN_AA9 -to RAM_DATA0[6]
+set_location_assignment PIN_AB9 -to RAM_DATA0[7]
+set_location_assignment PIN_Y9 -to RAM_DATA0[8]
+set_location_assignment PIN_W9 -to RAM_DATA0[9]
+set_location_assignment PIN_V9 -to RAM_DATA0[10]
+set_location_assignment PIN_U9 -to RAM_DATA0[11]
+set_location_assignment PIN_R9 -to RAM_DATA0[12]
+set_location_assignment PIN_W8 -to RAM_DATA0[13]
+set_location_assignment PIN_V8 -to RAM_DATA0[14]
+set_location_assignment PIN_U8 -to RAM_DATA0[15]
+set_location_assignment PIN_Y7 -to RAM0_BE0_N
+set_location_assignment PIN_T8 -to RAM_OE_N
+set_location_assignment PIN_W7 -to RAM0_BE1_N
+set_location_assignment PIN_AA10 -to RAM_RW_N
+set_global_assignment -name STRATIX_CONFIGURATION_DEVICE EPCS4
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+set_location_assignment PIN_R22 -to BUTTON_N[0]
+set_location_assignment PIN_R21 -to BUTTON_N[1]
+set_location_assignment PIN_T22 -to BUTTON_N[2]
+set_location_assignment PIN_T21 -to BUTTON_N[3]
+set_instance_assignment -name IO_STANDARD LVTTL -to BUTTON_N[0]
+set_instance_assignment -name IO_STANDARD LVTTL -to BUTTON_N[1]
+set_instance_assignment -name IO_STANDARD LVTTL -to BUTTON_N[2]
+set_instance_assignment -name IO_STANDARD LVTTL -to BUTTON_N[3]
+set_global_assignment -name ENABLE_SIGNALTAP OFF
+set_global_assignment -name USE_SIGNALTAP_FILE output_files/stp1.stp
+set_location_assignment PIN_AB20 -to FL_ADDRESS[0]
+set_location_assignment PIN_AA14 -to FL_ADDRESS[1]
+set_location_assignment PIN_Y16 -to FL_ADDRESS[2]
+set_location_assignment PIN_R15 -to FL_ADDRESS[3]
+set_location_assignment PIN_T15 -to FL_ADDRESS[4]
+set_location_assignment PIN_U15 -to FL_ADDRESS[5]
+set_location_assignment PIN_V15 -to FL_ADDRESS[6]
+set_location_assignment PIN_W15 -to FL_ADDRESS[7]
+set_location_assignment PIN_R14 -to FL_ADDRESS[8]
+set_location_assignment PIN_Y13 -to FL_ADDRESS[9]
+set_location_assignment PIN_R12 -to FL_ADDRESS[10]
+set_location_assignment PIN_T12 -to FL_ADDRESS[11]
+set_location_assignment PIN_AB14 -to FL_ADDRESS[12]
+set_location_assignment PIN_AA13 -to FL_ADDRESS[13]
+set_location_assignment PIN_AB13 -to FL_ADDRESS[14]
+set_location_assignment PIN_AA12 -to FL_ADDRESS[15]
+set_location_assignment PIN_AB12 -to FL_ADDRESS[16]
+set_location_assignment PIN_AA20 -to FL_ADDRESS[17]
+set_location_assignment PIN_U14 -to FL_ADDRESS[18]
+set_location_assignment PIN_V14 -to FL_ADDRESS[19]
+set_location_assignment PIN_U13 -to FL_ADDRESS[20]
+set_location_assignment PIN_R13 -to FL_ADDRESS[21]
+set_location_assignment PIN_AB15 -to FLASH_CE_N
+set_location_assignment PIN_H15 -to PS2_KBCLK
+set_location_assignment PIN_J14 -to PS2_KBDAT
+set_instance_assignment -name IO_STANDARD LVTTL -to PS2_KBCLK
+set_instance_assignment -name IO_STANDARD LVTTL -to PS2_KBDAT
+set_location_assignment PIN_A6 -to AUD_ADCLRCK
+set_location_assignment PIN_B6 -to AUD_ADCDAT
+set_location_assignment PIN_A5 -to AUD_DACLRCK
+set_location_assignment PIN_B5 -to AUD_DACDAT
+set_location_assignment PIN_B4 -to AUD_XCK
+set_location_assignment PIN_A4 -to AUD_BCLK
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_ADCLRCK
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_ADCDAT
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_DACLRCK
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_DACDAT
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_XCK
+set_instance_assignment -name IO_STANDARD LVTTL -to AUD_BCLK
+set_location_assignment PIN_D12 -to CLK27MHZ
+set_instance_assignment -name IO_STANDARD LVTTL -to CLK27MHZ
+set_location_assignment PIN_F14 -to UART_RXD
+set_location_assignment PIN_G12 -to UART_TXD
+set_instance_assignment -name IO_STANDARD LVTTL -to UART_RXD
+set_instance_assignment -name IO_STANDARD LVTTL -to UART_TXD
+set_global_assignment -name OPTIMIZE_HOLD_TIMING "IO PATHS AND MINIMUM TPD PATHS"
+set_global_assignment -name OPTIMIZE_MULTI_CORNER_TIMING ON
+set_global_assignment -name FITTER_EFFORT "AUTO FIT"
+set_location_assignment PIN_A3 -to AV_I2C_SCLK
+set_location_assignment PIN_B3 -to AV_I2C_SDAT
+set_instance_assignment -name IO_STANDARD LVTTL -to AV_I2C_SCLK
+set_instance_assignment -name IO_STANDARD LVTTL -to AV_I2C_SDAT
+set_global_assignment -name SLD_FILE "D:/CEC-X_FPGA_prj/CEC-X_FPGA/prj_de1/output_files/stp1_auto_stripped.stp"
+set_global_assignment -name VERILOG_FILE ../rtl/top_de1.v
+set_global_assignment -name VHDL_FILE ../rtl/apple2fpga/cpu6502.vhd
+set_global_assignment -name VERILOG_FILE ../rtl/audio/I2C_AUD_Config.v
+set_global_assignment -name VERILOG_FILE ../rtl/clock_gen.v
+set_global_assignment -name VERILOG_FILE "../rtl/verilog-uart/uart_tx.v"
+set_global_assignment -name VERILOG_FILE "../rtl/verilog-uart/uart_rx.v"
+set_global_assignment -name VERILOG_FILE "../rtl/verilog-uart/uart.v"
+set_global_assignment -name VERILOG_FILE ../rtl/uart_if.v
+set_global_assignment -name VERILOG_FILE ../rtl/audio/wave_gen_x2.v
+set_global_assignment -name VERILOG_FILE ../rtl/audio/I2C_Controller.v
+set_global_assignment -name VERILOG_FILE ../rtl/AUDIO_IF.v
+set_global_assignment -name VERILOG_FILE ../rtl/AUDIO_CLK.v
+set_global_assignment -name VERILOG_FILE ../rtl/VGA_Audio_PLL.v
+set_global_assignment -name VERILOG_FILE ../rtl/sync_w_asyn_r_dpram.v
+set_global_assignment -name VERILOG_FILE ../rtl/apple_keyboard.v
+set_global_assignment -name VERILOG_FILE ../rtl/reset_de.v
+set_global_assignment -name VERILOG_FILE ../rtl/vram_buf.v
+set_global_assignment -name VERILOG_FILE ../rtl/ps2_keyboard_glb.v
+set_global_assignment -name VERILOG_FILE ../rtl/char_rom_altera.v
+set_global_assignment -name VERILOG_FILE ../rtl/apple_video.v
+set_global_assignment -name SDC_FILE "cec-x.out.sdc"
+set_global_assignment -name SIGNALTAP_FILE output_files/stp1.stp
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

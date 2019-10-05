@@ -1,0 +1,14 @@
+Partition Merge Status : Successful - Fri Jun 14 16:43:04 2019
+Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
+Revision Name : cec-x
+Top-level Entity Name : AppleFPGA
+Family : Cyclone II
+Total logic elements : 8,652
+    Total combinational functions : 5,159
+    Dedicated logic registers : 5,219
+Total registers : 5219
+Total pins : 147
+Total virtual pins : 0
+Total memory bits : 169,472
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1

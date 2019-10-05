@@ -1,0 +1,91 @@
+# Reading C:/modeltech_6.5b/tcl/vsim/pref.tcl 
+# //  ModelSim SE 6.5b May 21 2009 
+# //
+# //  Copyright 1991-2009 Mentor Graphics Corporation
+# //              All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND 
+# //  PROPRIETARY INFORMATION WHICH IS THE PROPERTY
+# //  OF MENTOR GRAPHICS CORPORATION OR ITS LICENSORS
+# //  AND IS SUBJECT TO LICENSE TERMS.
+# //
+# OpenFile C:/CEC-X/rtl/tb/CEC.mpf 
+# Loading project CEC
+# Compile of AppleFPGA_tb.v was successful.
+# Compile of IS61LV25616AL.v was successful.
+# Compile of apple_video.v was successful.
+# Compile of AppleFPGA.v was successful.
+# Compile of ps2_keyboard_glb.v was successful.
+# Compile of mem_flash_tb.selftest.v was successful.
+# Compile of T65_Pack.vhd was successful.
+# Compile of T65.vhd was successful with warnings.
+# Compile of T65_ALU.vhd was successful.
+# Compile of T65_MCode.vhd was successful.
+# Compile of T16450.vhd was successful.
+# Compile of SSRAM.vhd was successful.
+# Compile of regbank_axy.v was successful.
+# Compile of core.v was successful.
+# Compile of fsm_execution_unit.v was successful.
+# Compile of fsm_nmi.v was successful.
+# Compile of r65c02_tc.v was successful.
+# Compile of reg_pc.v was successful.
+# Compile of reg_sp.v was successful.
+# 19 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.top_tb
+# vsim -voptargs=+acc work.top_tb 
+# Loading work.top_tb
+# Loading work.IS61LV25616
+# Loading work.mem_flash_tb
+# Loading work.AppleFPGA
+# Loading work.R65C02_TC
+# Loading work.Core
+# Loading work.FSM_Execution_Unit
+# Loading work.FSM_NMI
+# Loading work.RegBank_AXY
+# Loading work.Reg_PC
+# Loading work.Reg_SP
+# Loading work.ps2_keyboard
+# Loading work.APPLE_VIDEO
+run -all
+# ** Error: (vsim-3601) Iteration limit reached at time 6590 ns.
+run -all
+# ** Error: (vsim-3601) Iteration limit reached at time 6590 ns.
+quit -sim
+# Compile of AppleFPGA_tb.v was successful.
+# Compile of IS61LV25616AL.v was successful.
+# Compile of apple_video.v was successful.
+# Compile of AppleFPGA.v was successful.
+# Compile of ps2_keyboard_glb.v was successful.
+# Compile of mem_flash_tb.selftest.v was successful.
+# Compile of T65_Pack.vhd was successful.
+# Compile of T65.vhd was successful with warnings.
+# Compile of T65_ALU.vhd was successful.
+# Compile of T65_MCode.vhd was successful.
+# Compile of T16450.vhd was successful.
+# Compile of SSRAM.vhd was successful.
+# Compile of regbank_axy.v was successful.
+# Compile of core.v was successful.
+# Compile of fsm_execution_unit.v was successful.
+# Compile of fsm_nmi.v was successful.
+# Compile of r65c02_tc.v was successful.
+# Compile of reg_pc.v was successful.
+# Compile of reg_sp.v was successful.
+# 19 compiles, 0 failed with no errors. 
+vsim -voptargs=+acc work.top_tb
+# vsim -voptargs=+acc work.top_tb 
+# Loading work.top_tb
+# Loading work.IS61LV25616
+# Loading work.mem_flash_tb
+# Loading work.AppleFPGA
+# Loading work.ps2_keyboard
+# Loading work.APPLE_VIDEO
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.t65_pack
+# Loading work.t65(rtl)
+# Loading work.t65_mcode(rtl)
+# Loading work.t65_alu(rtl)
+run -all
+# ** Note: $finish    : C:/CEC-X/rtl/tb/AppleFPGA_tb.v(87)
+#    Time: 500 us  Iteration: 0  Instance: /top_tb

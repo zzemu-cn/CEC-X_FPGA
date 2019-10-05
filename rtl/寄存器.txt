@@ -1,0 +1,118 @@
+有疑问的地方：
+1、在主存和辅存切换时
+P134中提到
+只有在设为读 RAM，禁写 RAM，ALLZP 1 时，才能切换到 ROM 辅存。
+我的理解应该没有禁写 RAM，需要验证。
+
+
+
+APPLE_ZP_RAM	// 0000 - 00FF
+APPLE_LC_RAM    // D E F
+
+D E F 地址 12K ROM 16K RAM
+其中 D 可以映射到两个 4K RAM
+
+P139
+C0B0 字库
+  D3 D2 D1 D0 $4000--$7FFF
+  D4 彩色 0 禁止彩色 1 允许彩色
+  D5 $8000--$BFFF 0 第1体 U35($0000---$3FFF) 1 第2体 U7($0000---$3FFF)
+
+P144
+复位 置位 读取
+80STORE C000 C001 C018
+RAMRD C002 C003 C013
+RAMWRT C004 C005 C014
+ALTZP C008 C009 C016
+SLOTCXROM C006 C007 C015
+SLOTC3ROM C00A C00B C017
+
+对应寄存器
+ARAM_RD
+ARAM_WR
+ALT_ZP
+
+P145
+SLOTCXROM
+1  C100 -- CFFF 内部ROM
+0  IO ROM
+
+SLOTC3ROM
+1  C3xx IO ROM
+0  C3xx 内部ROM
+
+
+P146
+C080 -- C08F
+控制 LC_BANK1 LC_BANK2 ...
+A0 1 写RAM  LC_WE <= 1'b1
+A3 0 第二体 LC_BANK <= 1'b1  1 第一体 LC_BANK <= 1'b0
+
+LC_BANK1 LC_BANK2 读RAM  如果都为 0 读ROM
+
+
+切换工作对地址按两个部分来处理：
+1、0200 -- BFFF
+2、0000 -- 01FF  D000 -- FFFF
+其中 0000 到 3FFF 始终对应于 RAM
+
+对于 0200 -- BFFF 仅 RAMRD 来控制 C002 RAM 主存  C003 ROM 辅存
+
+
+ALTZP 主存辅存切换  0 主存  1 辅存
+
+
+对于 0000 -- 01FF  D000 -- FFFF 由 ALLZP 控制
+在 D000 -- FFFF 由RAMRD设为 ROM 辅存这种情况下，当 ALLZP 1 时仍为 RAM 主存
+只有在设为读 RAM，禁写 RAM，ALLZP 1 时，才能切换到 ROM 辅存。
+只有在设为读 RAM，ALLZP 1 时，才能切换到 ROM 辅存
+
+LOGO 和 CEC-BASIC 在 U7
+汉字系统和汉字码表在 U35中
+
+另外 C300 -- C3FF 作为切换指令执行区。初始状态指向ROM。而执行前必须先切换到输入输出空间。
+SLOTC3ROM 置1 SLOTCXROM 置0   C00B  C006
+C300 -- C3FF 映射到 U35 4300 43FF
+
+软盘驱动器 BOOT ROM
+C600 -- C6FF 映射到 U35 4600 46FF
+
+C100 -- FFFF 监控程序和BASIC解释程序 U7 4100 -- 7FFF
+
+D000 -- FFFF 汉字处理程序 U35 5000 -- 7FFF
+
+
+C100 -- CFFF 内部ROM  U7  4100 -- 4FFF
+只有这种情况 C3xx 映射到 U35，SLOTC3ROM 置1 SLOTCXROM 置0，其它情况映射到 U7 内部ROM
+
+
+RAM卡
+RAM卡用到了ALT_ZP，和CEC机的汉字系统冲突。
+
+* RAM Drive card 384k
+*
+* Looks like RAMWorks III card with 1 Bank of 256K
+* and 3 more banks of 64K
+
+C073
+BANK <= {(DATA_OUT[7]|DATA_OUT[6]|DATA_OUT[5]|DATA_OUT[4]),DATA_OUT[3:0]};
+
+
+命令备忘
+CALL -151 进入监控
+FF23G 进入自检
+
+涉及到的寄存器
+reg	[7:0]		CEC_C0B0;
+reg				ARAM_RD;
+reg				ARAM_WR;
+reg				SLOTCXROM;
+reg				ALT_ZP;
+reg				SLOTC3ROM;
+
+初始状态
+		ARAM_RD <= 1'b0;
+		ARAM_WR <= 1'b0;
+		SLOTCXROM <= 1'b0;
+		ALT_ZP <= 1'b0;
+		SLOTC3ROM <= 1'b0;
